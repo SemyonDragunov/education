@@ -1,0 +1,29 @@
+name = Education
+description = Adaptive theme Education.
+package = Core
+core = 7.x
+
+stylesheets[all][] = css/education.css
+stylesheets[all][] = color/color.css
+
+dependencies[] = sl7_control_panel
+dependencies[] = color
+
+; Regions.
+regions[header] = Шапка
+regions[action] = Действия
+regions[help] = Help
+regions[content] = Content
+regions[slider] = Слайдер
+regions[front] = Главная страница
+regions[sidebar_first] = Sidebar first
+regions[top_footer_left] = Над подвалом (лево)
+regions[top_footer_center] = Над подвалом (центр)
+regions[top_footer_right] = Над подвалом (право)
+regions[footer_left] = Подвал (лево)
+regions[footer_right] = Подвал (право)
+regions[footer] = Footer
+
+; This two regions is required by Drupal Core. Don't remove them, they not display in block list.
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom

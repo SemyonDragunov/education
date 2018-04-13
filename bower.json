@@ -1,0 +1,23 @@
+{
+  "name": "education",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "Semyon Dragunov <sam.dragunov@gmail.com>"
+  ],
+  "license": "Apache License 2.0",
+  "homepage": "https://github.com/SemyonDragunov/education",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.12",
+    "bourbon": "~4.2.6",
+    "reset-css": "~2.0.2011012603"
+  }
+}

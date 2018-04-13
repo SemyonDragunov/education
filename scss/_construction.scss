@@ -1,0 +1,144 @@
+// Construction & adaptive.
+// ========================
+
+@mixin to-region() {
+  background-color: white;
+  padding: $base-margin;
+  box-sizing: border-box;
+}
+
+@mixin to-base-section() {
+  @include susy-breakpoint($phone-only-breakpoint) {
+    padding-bottom: $base-margin;
+    padding-top: $base-margin;
+  }
+
+  @include susy-breakpoint($tablet-only-breakpoint) {
+    padding-bottom: $base-margin * 2;
+    padding-top: $base-margin * 2;
+  }
+
+  @include susy-breakpoint($big-screen-up-breakpoint) {
+    padding-bottom: $base-padding-wrapper;
+    padding-top: $base-padding-wrapper;
+  }
+}
+
+.container {
+  @include container(70em);
+  @include gutter(inside);
+}
+
+.region-front {
+  > .block {
+    @include to-base-section;
+  }
+}
+
+header {
+  > .header-top {
+    .region {
+      @include span(1 of 2 border-box);
+
+      &:last-child {
+        @include last;
+      }
+
+      @include susy-breakpoint($phone-only-breakpoint) {
+        @include span(full);
+      }
+    }
+  }
+
+  > .header-bar {
+    .header-left,
+    .header-right {
+      @include susy-breakpoint($phone-only-breakpoint) {
+        @include span(full);
+      }
+    }
+  }
+}
+
+section.h1-page {
+  @include susy-clearfix;
+  @include to-base-section;
+
+  h1,
+  .breadcrumb {
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+}
+
+section.content {
+  @include to-base-section;
+}
+
+main {
+  @include span(3 of 4 first);
+  @include to-region;
+  border-radius: $border-radius-wrapper;
+
+  @include susy-breakpoint($phone-only-breakpoint) {
+    @include span(full);
+  }
+
+  body.no-sidebars & {
+    @include span(full);
+  }
+}
+
+#sidebar-first {
+  @include span(1 of 4 last);
+  @include to-region;
+  border-radius: $border-radius-wrapper;
+
+  @include susy-breakpoint($phone-only-breakpoint) {
+    @include span(full);
+  }
+}
+
+section.top-footer {
+  @include susy-clearfix;
+  @include to-base-section;
+
+  .region {
+    @include span(1 of 3);
+    @include to-region();
+
+    &:last-child {
+      @include last;
+    }
+
+    &:only-child {
+      @include span(full);
+    }
+
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+}
+
+footer {
+  @include to-base-section;
+
+  .region-footer-left,
+  .region-footer-right {
+    @include span(1 of 2);
+
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+
+  .region-footer-right {
+    @include last;
+  }
+
+  .region-footer {
+    @include span(full);
+  }
+}

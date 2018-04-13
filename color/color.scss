@@ -1,0 +1,104 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+$color-main: #018763;
+$color-second: #1eaace;
+
+a {
+  color: $color-main;
+}
+
+.header-bar {
+  .header-left {
+    a, h1 {
+      color: $color-main;
+    }
+  }
+
+  .header-right {
+    ul#main-menu-links {
+      > li {
+        > a {
+          color: $color-main;
+
+          &:hover,
+          &:focus {
+            background-color: $color-main;
+          }
+        }
+
+        &.active {
+          > a {
+            background-color: $color-main;
+          }
+        }
+      }
+    }
+  }
+}
+
+.h1-page {
+  background-color: $color-second;
+  border-top-color: $color-second;
+
+  .breadcrumb {
+    span.inline {
+      a {
+        color: $color-second;
+      }
+    }
+  }
+}
+
+.button,
+#{$all-buttons} {
+  background-color: $color-second;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-second, 10%);
+  }
+
+  &.second {
+    background-color: $color-main;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-main, 10%);
+    }
+  }
+}
+
+#sidebar-first {
+  .block {
+    ul {
+      li {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+ul.pager {
+  li {
+    border-color: $color-main;
+
+    &.pager-current {
+      color: $color-main;
+    }
+
+    a {
+      background-color: $color-main;
+
+      &:hover,
+      &:focus {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+#comments {
+  .comment-new {
+    border-left-color: $color-second;
+  }
+}

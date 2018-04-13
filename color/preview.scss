@@ -1,0 +1,94 @@
+@import "../bower_components/susy/sass/susy";
+
+$default-color: #018763;
+$second-color: #1eaace;
+
+#container-wrapper {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+
+  div,
+  header,
+  aside,
+  ul {
+    &:after {
+      @include susy-clearfix;
+    }
+  }
+}
+
+#container {
+  width: 500px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.19);
+}
+
+#header-top {
+  height: 20px;
+  padding-top: 3px;
+  padding-right: 3px;
+}
+
+#header {
+  @include susy-clearfix;
+  padding: 7px;
+
+  .column {
+    @include span(1 of 2);
+
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+
+  .right-side {
+    > span {
+      @include span(1 of 4);
+
+      &:nth-child(4n) {
+        @include last;
+      }
+    }
+  }
+}
+
+#h1-page {
+  background: #f4f7f9;
+  margin: 0 15px;
+  height: 30px
+}
+
+.pseudo-title {
+  background: $default-color;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}
+.pseudo-text-1  {
+  background: #919191;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}
+.pseudo-link-1 {
+  background: $default-color;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}
+.pseudo-link-2 {
+  background: $second-color;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}
+
+.col-1 {
+  width: 20%;
+}
+
+.right {
+  float: right;
+}
